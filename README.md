@@ -1,2 +1,5 @@
-# LabyrinthGame
-Simple command line game where you have to get out of a ASCII labyrinth.
+# Szkola Letnia
+Projekt szkoly letniej wykonany przez:
+Maciej Mirowski
+Mikołaj Munik
+Piotr Ledwoch
