@@ -1,88 +1,225 @@
-void swap_nodes(struct list_t* list, struct node_t* node1, struct node_t* node2){
-    if(list==NULL||node1==NULL||node2==NULL) return;
-    if(list->tail==NULL&&list->head!=NULL) return;
-    if(list->head==NULL&&list->tail!=NULL) return;
-    if(list->head==NULL&&list->tail==NULL) return;
-    if(node2==node1) return;
-    if(list->head==list->tail){
-        return;
-    }
-    if(list->head==node1){
-        struct node_t temp1=*node1;
-        struct node_t temp2=*node2;
-        if(node1->next!=NULL) node1->next->prev=node2;
-        if(node1->prev!=NULL) node1->prev->next=node2;
-        node1->next=temp2.next;
-        node1->prev=temp2.prev;
-        if(node2->next!=NULL) node2->next->prev=node1;
-        if(node2->prev!=NULL) node2->prev->next=node1;
-        node2->next=temp1.next;
-        node2->prev=temp1.prev;
-        if(list->tail==node2){
-            list->tail=node1;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="autor" content="Piotr Ledwoch">
+    <meta name="autor2" content="Mikołaj Munik">
+    <meta name="autor3" content="Maciej Mirowski">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Letnia</title>
+    <link rel="stylesheet" type="text/css" href="projekt.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <style>
+        #font-size-controls button {
+            border: none;
         }
-        list->head=node2;
-        return;
-    }
-    if(list->head==node2){
-        struct node_t temp1=*node1;
-        struct node_t temp2=*node2;
-        if(node1->next!=NULL) node1->next->prev=node2;
-        if(node1->prev!=NULL) node1->prev->next=node2;
-        node1->next=temp2.next;
-        node1->prev=temp2.prev;
-        if(node2->next!=NULL) node2->next->prev=node1;
-        if(node2->prev!=NULL) node2->prev->next=node1;
-        node2->next=temp1.next;
-        node2->prev=temp1.prev;
-        if(list->tail==node1){
-            list->tail=node2;
+        #form-counter {
+            text-align: center; 
+            margin-top: 10px; 
         }
-        list->head=node1;
-        return;
-    }
-    if(list->tail==node1){
-        struct node_t temp1=*node1;
-        struct node_t temp2=*node2;
-        if(node1->next!=NULL) node1->next->prev=node2;
-        if(node1->prev!=NULL) node1->prev->next=node2;
-        node1->next=temp2.next;
-        node1->prev=temp2.prev;
-        if(node2->next!=NULL) node2->next->prev=node1;
-        if(node2->prev!=NULL) node2->prev->next=node1;
-        node2->next=temp1.next;
-        node2->prev=temp1.prev;
-        if(list->head==node2){
-            list->head=node1;
+
+        #counter {
+            font-weight: bold; 
         }
-        list->tail=node2;
-        return;
-    }
-    if(list->tail==node2){
-        struct node_t temp1=*node1;
-        struct node_t temp2=*node2;
-        if(node1->next!=NULL) node1->next->prev=node2;
-        if(node1->prev!=NULL) node1->prev->next=node2;
-        node1->next=temp2.next;
-        node1->prev=temp2.prev;
-        if(node2->next!=NULL) node2->next->prev=node1;
-        if(node2->prev!=NULL) node2->prev->next=node1;
-        node2->next=temp1.next;
-        node2->prev=temp1.prev;
-        if(list->head==node1){
-            list->head=node2;
+
+
+    </style>
+</head>
+<body style = "background-color: #8d74bb">
+   
+    <nav>
+        <div class="container-fluid" style="display: flexbox;">
+            <div class="row" style="text-align: center;">
+                <div class="col-12 col-lg-3">
+                    <a href="#formularz">Formularz</a>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <a href="#onas">O nas</a>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <a href="#zdjecia">Zdjęcia</a>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <a href="#kontakt">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div id="font-size-controls">
+        <button onclick="increaseFontSize()">A</button>
+        <button onclick="decreaseFontSize()">a</button>
+    </div>
+
+    <script>
+        function decreaseFontSize() {
+            const currentFontSize = parseInt(document.body.style.fontSize) || 16;
+            const newFontSize = Math.max(currentFontSize - 2, 10);
+            document.body.style.fontSize = newFontSize + "px";
         }
-        list->tail=node1;
-        return;
+        function increaseFontSize() {
+
+            const currentFontSize = parseInt(document.body.style.fontSize) || 16;
+
+            const newFontSize = Math.min(currentFontSize + 2, 24);
+            
+            document.body.style.fontSize = newFontSize + "px";
+        }
+
+
+        const backgroundColor = getComputedStyle(document.body).getPropertyValue("background-color");
+        
+
+        const buttons = document.querySelectorAll("#font-size-controls button");
+        buttons.forEach(button => {
+            button.style.backgroundColor = backgroundColor;
+        });
+    </script>
+    <img class="background-image" src="photka.png" alt="Zdjęcie Szkoły Letniej">
+    <div class="centered-text">
+        <h1 style="color: rgb(0, 0, 0);">Szkoła Letnia</h1>
+    </div>
+
+    <section id="onas" class="container">
+        <h2>O nas</h2>
+        <p class="align-left">Witaj na naszej stronie internetowej umożliwiającej rejestracje na szkołe letnią! Jesteśmy trójką studentów, którzy zainspirowani swoimi doświadczeniami postanowili stworzyć to miejsce, aby podzielić się wiedzą i pasją z innymi osobami zainteresowanymi przygotowaniem na wymarzony kierunek studiów.</p>
+        <p class="align-right">Nasze imiona to Maciek, Mikołaj i Piotr. Połączyła nas wspólna miłość do nauki oraz przekonanie, że edukacja to proces, który powinien być dostępny dla ws zystkich przez cały rok, niezależnie od pory roku. Zdajemy sobie sprawę, że wielu ludzi ma trudności ze znalezieniem informacji na temat szkół letnich, dlatego postanowiliśmy zgromadzić wszystkie potrzebne informacje w jednym miejscu.</p>
+        <p class="align-left">Jesteśmy pasjonatami podróży i odkrywania nowych miejsc. Często mieliśmy okazję uczestniczyć w szkołach letnich w różnych częściach świata. Każda z naszych podróży edukacyjnych była wyjątkowym doświadczeniem, które nie tylko poszerzyło naszą wiedzę, ale również rozwinęło nasze umiejętności międzykulturowe i otwarło nas na nowe perspektywy. Teraz chcemy podzielić się tymi doświadczeniami z Tobą!</p>
+        <p class="align-right">Na naszej stronie znajdziesz bogate informacje na temat szkół letnich: od różnorodnych programów nauczania po wskazówki dotyczące wyboru odpowiedniego miejsca i porady dla uczestników. Zbieramy informacje o różnych szkołach letnich na całym świecie, abyś mógł znaleźć te, które najlepiej odpowiadają Twoim zainteresowaniom i celom.</p>
+        <p class="align-left">Chcemy również zachęcić Cię do odkrywania korzyści, jakie niesie ze sobą uczestnictwo w szkole letniej. Pozwala ona na rozwinięcie umiejętności interpersonalnych, zdobycie nowych przyjaciół, poszerzenie horyzontów kulturowych i naukowych oraz rozszerzenie swoich możliwości edukacyjnych. Bez względu na to, czy jesteś młodym uczniem, studentem, czy profesjonalistą, szkoła letnia może stanowić inspirujące i wartościowe doświadczenie.</p>
+        <p class="align-right">Naszą misją jest pomóc Ci znaleźć idealną szkołę letnią, która spełni Twoje oczekiwania i pozwoli Ci rozwijać swoje zainteresowania. Dzięki naszej stronie będziesz mógł znaleźć informacje na temat programów nauczania, atrakcji lokalnych, warunków zakwaterowania i wiele więcej. Oferujemy również porady dotyczące procesu aplikacyjnego i finansowania, abyś mógł jak najlepiej przygotować się na swoją</p>
+        <p class="align-left">Oferujemy również porady dotyczące procesu aplikacyjnego i finansowania, abyś mógł jak najlepiej przygotować się na swoją wymarzoną szkołę letnią.</p>
+    </section>
+
+    <section id="zdjecia" class="gallery">
+        <h2>Zdjęcia</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="zdecie1.png"></div>
+                <div class="swiper-slide"><img src="zdjecie2.png"></div>
+                <div class="swiper-slide"><img src="grillek.png"></div>
+            </div>
+                
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <div class="formularz">
+        <section id="formularz">
+            <h2>Formularz</h2>
+
+        <form id="registration-form">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="surname">Nazwisko:</label>
+            <input type="text" id="surname" name="surname" required>
+            
+            <label for="age">Wiek:</label>
+            <input type="number" id="age" name="age" min="0" max="99" required>
+            
+            <label for="phone">Nr telefonu:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button id="submit" class="btn btn-primary" type="submit" >Wyślij zgłoszenie</button>
+
+        </form>
+        </section>
+        
+    </div>
+
+    <div id="form-counter">
+        Zajęte miejsca: <span id="counter">0</span>/500
+    </div>
+    <script>
+        let formCounter = 0;
+
+      
+        function submitHandler(event) {
+            event.preventDefault();
+            if (formCounter >= 500) {
+                alert('Brak miejsc!');
+            return;
     }
-    struct node_t temp1=*node1;
-    struct node_t temp2=*node2;
-    if(node1->next!=NULL) node1->next->prev=node2;
-    if(node1->prev!=NULL) node1->prev->next=node2;
-    node1->next=temp2.next;
-    node1->prev=temp2.prev;
-    if(node2->next!=NULL) node2->next->prev=node1;
-    if(node2->prev!=NULL) node2->prev->next=node1;
-    node2->next=temp1.next;
-    node2->prev=temp1.prev;
-}
+            formCounter++;
+
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = formCounter;
+            if (formCounter > 400) {
+                alert('Mało miejsc!');
+            }
+            const registrationForm = document.getElementById('registration-form');
+    registrationForm.reset();
+    if (formCounter === 500) {
+        const submitButton = document.getElementById('submit');
+        submitButton.disabled = true;
+    }
+        }
+
+        
+        const registrationForm = document.getElementById('registration-form');
+        registrationForm.addEventListener('submit', submitHandler);
+    </script>
+
+    <section id="kontakt" class="contact">
+        <h2>Kontakt</h2>
+            <p>Zadzwoń do nas: 222 333 444 <br>Napisz do nas: superwakacje@gmail.com</p>
+        
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 7000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const submitBtn = document.querySelector('#submit');
+        
+        submitBtn.addEventListener('click', submitHandler);
+        function submitHandler(event){
+            const name=document.querySelector('#name').value;
+            const surname=document.querySelector('#surname').value;
+            const age=document.querySelector('#age').value;
+            const phone=document.querySelector('#phone').value;
+            const email=document.querySelector('#email').value;
+            if(!(name !== '' || surname !== '' || age !== '' || phone !== ''|| email!=='')){
+                return;
+            }
+            const data = {
+                name,
+                surname,
+                age,
+                phone,
+                email
+            }
+            localStorage.setItem('Letnia', JSON.stringify(data));
+        }
+
+    </script>
+
+
+    <footer>
+        <span>&copy 2023 Piotr Ledwoch Mikołaj Munik Maciej Mirowski</span>
+    </footer>
+</body>
+</html>
