@@ -1,0 +1,154 @@
+body {
+    background-color: #3b3259;
+    color: #8d74bb;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    background-color: #6b549f;
+    padding: 10px;
+}
+
+.container-fluid a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #6b549f;
+    transition: background-color 0.3s; 
+}
+
+.container-fluid a:hover {
+    background-color: #8d74bb;
+    border-radius: 5px;
+}
+
+.container-fluid .col-12 {
+    text-align: center;
+    padding: 10px;
+}
+ 
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+}
+
+.centered-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1000;
+  }
+  
+ 
+  nav a {
+    padding: 10px 20px; 
+    text-decoration: none;
+    color: #000;
+  }
+  
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+h1 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="tel"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+form input[type="submit"] {
+    background-color: #6b549f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.background-image {
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+}
+
+.swiper{
+    width: 50%;
+    height: fit-content;
+}
+
+.swiper-slide img{
+    width: 100%;
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: #000000;
+}
+
+.swiper .swiper-pagination-bullet-active{
+    background: #6b549f;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.formularz{
+    max-width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px;
+}
+
+footer {
+    background-color: #0d001d;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+.align-left{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+.align-right{
+    display: flex;
+    align-items: right;
+    justify-content: left;
+  }
+message.txt
+3 KB
