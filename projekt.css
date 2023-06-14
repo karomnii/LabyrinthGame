@@ -1,11 +1,13 @@
 body {
     background-color: #3b3259;
     color: #8d74bb;
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     padding: 20px;
     margin: 0;
     padding: 0;
 }
+
+
 
 .container-fluid {
     background-color: #6b549f;
@@ -18,6 +20,10 @@ body {
     text-decoration: none;
     background-color: #6b549f;
     transition: background-color 0.3s; 
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: x-large;
 }
 
 .container-fluid a:hover {
@@ -30,26 +36,58 @@ body {
     padding: 10px;
 }
  
-.centered-text {
+/* .centered-text {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
+    font-family: 'Caveat', cursive;
 }
 
 .centered-text h1 {
-    font-size: 36px;
+    font-size: 65px;
     font-weight: bold;
     color: white;
-}
+} */
 
-.container {
-    max-width: 500px;
+.description_long {
+    max-width: 80%;
     margin: 0 auto;
     position: relative;
 }
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.osrodek {
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.osrphoto {
+    /* max-width: 80%;
+    margin: 0 auto;
+    position: relative; */
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+}
+
+.organizers{
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+.description_short {
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
 nav {
     position: sticky;
     top: 0;
@@ -123,7 +161,9 @@ form input[type="submit"] {
 }
 
 h2 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
+    font-style: italic;
     text-align: center;
 }
 
@@ -132,23 +172,57 @@ h2 {
     margin: 0 auto;
     align-items: center;
     padding: 10px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+.btn{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
 }
 
 footer {
     background-color: #0d001d;
     color: #fff;
-    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
+    /* font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: medium; */
   }
+
 .align-left{
     display: flex;
     align-items: left;
     justify-content: left;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
   }
 .align-right{
     display: flex;
     align-items: right;
     justify-content: left;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
   }
-message.txt
-3 KB
+
+.contact{
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+li{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+
