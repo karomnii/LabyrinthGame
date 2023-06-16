@@ -143,22 +143,6 @@ form input[type="submit"] {
     height: 50%;
 }
 
-.swiper{
-    width: 50%;
-    height: fit-content;
-}
-
-.swiper-slide img{
-    width: 100%;
-}
-
-.swiper .swiper-button-prev, .swiper .swiper-button-next{
-    color: #000000;
-}
-
-.swiper .swiper-pagination-bullet-active{
-    background: #6b549f;
-}
 
 h2 {
     font-family: 'Noto Sans', sans-serif;

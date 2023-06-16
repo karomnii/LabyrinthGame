@@ -1,0 +1,16 @@
+swiper-container {
+	width: 50%;
+	height: fit-content;
+}
+
+swiper-slide img {
+	width: 100%;
+}
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+	color: #000000;
+}
+
+swiper-container::part(bullet-active) {
+	background: #6b549f;
+}

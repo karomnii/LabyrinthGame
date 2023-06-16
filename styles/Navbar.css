@@ -1,0 +1,47 @@
+nav {
+	position: sticky;
+	top: 0;
+	background-color: #fff;
+	z-index: 1000;
+}
+
+nav a {
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #000;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+.container-fluid {
+	background-color: #6b549f;
+	padding: 10px;
+}
+
+.container-fluid a {
+	color: black;
+	padding: 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	background-color: #6b549f;
+	transition: background-color 0.3s;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 800;
+	font-style: italic;
+	font-size: x-large;
+}
+
+.container-fluid a:hover {
+	background-color: #8d74bb;
+}
+.container-fluid a.active {
+	background-color: #8d74bb;
+}
+.container-fluid .col-12 {
+	text-align: center;
+	padding: 10px;
+}
+.row {
+	text-align: center;
+}
