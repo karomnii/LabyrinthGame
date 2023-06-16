@@ -1,6 +1,6 @@
-const NavItem = ({ itemId, children, setCurrent, current }) => {
+const NavItem = ({ itemId, children, setCurrent, current, ...props }) => {
 	return (
-		<div className={`col-12 col-lg-3`}>
+		<div {...props}>
 			<a
 				href={`#${itemId}`}
 				className={`${current === itemId ? 'active' : ''}`}

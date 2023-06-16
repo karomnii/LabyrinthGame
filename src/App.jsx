@@ -12,6 +12,7 @@ import zdjecie2 from './assets/zdjecie2.png';
 import grillek from './assets/grillek.png';
 import RightParagraph from './RightParagraph';
 import Footer from './Footer';
+import photka from './assets/photka.png';
 function App() {
 	const [currentlySelected, setCurrentlySelected] = useState(
 		window.location.hash.split('#')[1]
@@ -41,6 +42,7 @@ function App() {
 				currentlySelected={currentlySelected}
 				setCurrentlySelected={setCurrentlySelected}
 			/>
+			<img src={photka} id='header-img' />
 			<FontSizeControls />
 			<ContentSection
 				observer={observer}
