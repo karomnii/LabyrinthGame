@@ -42,7 +42,11 @@ function App() {
 				currentlySelected={currentlySelected}
 				setCurrentlySelected={setCurrentlySelected}
 			/>
-			<img src={photka} id='header-img' />
+			<img
+				src={photka}
+				id='header-img'
+				alt='Widok na góry i morze, napis Szkoła Letnia'
+			/>
 			<FontSizeControls />
 			<ContentSection
 				observer={observer}
@@ -193,7 +197,11 @@ function App() {
 					<li>Spa i centrum odnowy biologicznej</li>
 				</ul>
 				<br />
-				<img className='osrphoto' src={pocztowka} />
+				<img
+					className='osrphoto'
+					src={pocztowka}
+					alt='Pocztówka zawierająca w sobie trzy mniejsze zdjęcia. Widoki na morze, plażę, basen'
+				/>
 			</ContentSection>
 			<RegistrationForm observer={observer} />
 			<ContentSection
@@ -202,9 +210,12 @@ function App() {
 				className='gallery'
 			>
 				<GallerySwiper>
-					<img src={zdjecie1}></img>
-					<img src={zdjecie2}></img>
-					<img src={grillek}></img>
+					<img
+						src={zdjecie1}
+						alt='Widok na wąską uliczkę kamienną'
+					></img>
+					<img src={zdjecie2} alt='Kot śpiący na krześle'></img>
+					<img src={grillek} alt='Grill z kiełbaskami'></img>
 				</GallerySwiper>
 			</ContentSection>
 			<ContentSection
