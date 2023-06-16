@@ -13,7 +13,9 @@ import grillek from './assets/grillek.png';
 import RightParagraph from './RightParagraph';
 import Footer from './Footer';
 function App() {
-	const [currentlySelected, setCurrentlySelected] = useState(window.location.hash);
+	const [currentlySelected, setCurrentlySelected] = useState(
+		window.location.hash.split('#')[1]
+	);
 	const observer = new IntersectionObserver(
 		function (entries) {
 			// const target = entries.reduce(
