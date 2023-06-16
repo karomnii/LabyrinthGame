@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const RegistrationForm = ({ observer }) => {
+const RegistrationForm = () => {
 	const ref = useRef(null);
 	const formRef = useRef(null);
 	const submitButton = useRef(null);
@@ -19,9 +19,6 @@ const RegistrationForm = ({ observer }) => {
 			}
 		}
 	}, [formCounter]);
-	useEffect(() => {
-		observer.observe(ref.current);
-	}, []);
 
 	const submitHandler = (event) => {
 		event.preventDefault();

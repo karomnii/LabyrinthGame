@@ -1,10 +1,7 @@
 import { useEffect, useRef } from 'react';
 import '../styles/ContentSection.css';
-const ContentSection = ({ children, id, className, heading, observer }) => {
+const ContentSection = ({ children, id, className, heading }) => {
 	const ref = useRef(null);
-	useEffect(() => {
-		observer.observe(ref.current);
-	}, []);
 
 	return (
 		<>

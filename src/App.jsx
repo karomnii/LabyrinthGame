@@ -17,25 +17,6 @@ function App() {
 	const [currentlySelected, setCurrentlySelected] = useState(
 		window.location.hash.split('#')[1]
 	);
-	const observer = new IntersectionObserver(
-		function (entries) {
-			// const target = entries.reduce(
-			// 	(acc, entry) => {
-			// 		if (acc.time === null && acc.target === null) {
-			// 			return { target: entry.target.id, time: entry.time };
-			// 		}
-			// 		if (entry.time < acc.time) {
-			// 			return { target: entry.target.id, time: entry.time };
-			// 		}
-			// 		return acc;
-			// 	},
-			// 	{ target: null, time: null }
-			// );
-			// setCurrentlySelected(target.target);
-			// window.location.hash = `#${target.target}`;
-		},
-		{ threshold: [1] }
-	);
 	return (
 		<>
 			<NavBar
@@ -49,7 +30,7 @@ function App() {
 			/>
 			<FontSizeControls />
 			<ContentSection
-				observer={observer}
+
 				id='description_short'
 				className='description_short'
 				heading={'Zapraszamy wszystkich przyszłych studentów!'}
@@ -95,7 +76,7 @@ function App() {
 				</LeftParagraph>
 			</ContentSection>
 			<ContentSection
-				observer={observer}
+
 				id='organizers'
 				className='organizers'
 				heading='Organizatorzy'
@@ -123,7 +104,7 @@ function App() {
 				</LeftParagraph>
 			</ContentSection>
 			<ContentSection
-				observer={observer}
+
 				id='description_long'
 				className='description_long'
 				heading='Ważne informacje'
@@ -158,7 +139,7 @@ function App() {
 				</LeftParagraph>
 			</ContentSection>
 			<ContentSection
-				observer={observer}
+
 				id='osrodek'
 				className='osrodek'
 				heading='Ośrodek'
@@ -203,9 +184,9 @@ function App() {
 					alt='Pocztówka zawierająca w sobie trzy mniejsze zdjęcia. Widoki na morze, plażę, basen'
 				/>
 			</ContentSection>
-			<RegistrationForm observer={observer} />
+			<RegistrationForm/>
 			<ContentSection
-				observer={observer}
+
 				id='zdjecia'
 				className='gallery'
 			>
@@ -219,7 +200,7 @@ function App() {
 				</GallerySwiper>
 			</ContentSection>
 			<ContentSection
-				observer={observer}
+
 				id='onas'
 				className='osrodek'
 				heading='O nas'
@@ -266,7 +247,7 @@ function App() {
 			<ContentSection
 				id='kontakt1'
 				className='contact'
-				observer={observer}
+
 				heading='Kontakt'
 			>
 				<p>
