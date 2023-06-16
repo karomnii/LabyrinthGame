@@ -25,7 +25,7 @@ const RegistrationForm = ({ observer }) => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-		const registrationForm = formRef.current;
+		const registrationForm = event.target;
 		if (formCounter >= 500) {
 			alert('Brak miejsc!');
 			return;
@@ -120,7 +120,6 @@ const RegistrationForm = ({ observer }) => {
 							id='submit'
 							className='btn btn-primary'
 							type='submit'
-							onClick={submitHandler}
 							ref={submitButton}
 							style={{ fontWeight: 400, fontSize: 'large' }}
 						>
