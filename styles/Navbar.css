@@ -9,12 +9,6 @@ nav a {
 	text-decoration: none;
 	color: #000;
 }
-
-@media screen and (max-width: 500px) {
-	#header-img {
-		padding-top: 1em;
-	}
-}
 #mobile-menu-content.active {
 	display: flex !important;
 	flex-direction: column;
